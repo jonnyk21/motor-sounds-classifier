@@ -1,6 +1,5 @@
 from librosa.core import audio
 from matplotlib.pyplot import text
-from audio_classification_kaggle import predict_unknown_sample
 import streamlit as st
 import utils
 import copy
@@ -37,7 +36,7 @@ if display_style == "Multiple at once":
     audio_box = st.sidebar.checkbox("Audio")
     wave_box = st.sidebar.checkbox("Wave signal")
     spectogram_box = st.sidebar.checkbox("Spectogram")
-  elif len(sound_files) == 1:
+  if len(sound_files) == 1:
     predict_box = st.sidebar.checkbox("Prediction")
   if len(sound_files)>= 1:
     if audio_box:
