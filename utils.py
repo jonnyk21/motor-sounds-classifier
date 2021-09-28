@@ -29,8 +29,8 @@ config = {"n_mels":  128,
 
 
 def plot_audio(sound_files):
-    rows = int(math.ceil(len(sound_files)/3))
-    columns = len(sound_files) if len(sound_files)<3 else 3
+    rows = int(math.ceil(len(sound_files)/2))
+    columns = len(sound_files) if len(sound_files)<2 else 2
     fig, axs = plt.subplots(rows,columns, squeeze=False)
     fig.set_size_inches(10 * columns, 5 * rows)
     if len(sound_files) == 1:
@@ -54,8 +54,8 @@ def plot_audio(sound_files):
     return fig
 
 def plot_spectogram(sound_files):
-    rows = int(math.ceil(len(sound_files)/3))
-    columns = len(sound_files) if len(sound_files)<3 else 3
+    rows = int(math.ceil(len(sound_files)/2))
+    columns = len(sound_files) if len(sound_files)<2 else 2
     fig, axs = plt.subplots(rows,columns,squeeze=False)
     fig.set_size_inches(10 * columns, 5 * rows)
     if len(sound_files) == 1:
