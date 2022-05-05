@@ -96,7 +96,7 @@ def create_model(config):
     model.fc = nn.Sequential(*[nn.Dropout(p=0.25), nn.Linear(num_ftrs, len(config["classes"]))])
     return model
 
-def predict_unknown_sample(file_path, model_path="motor_sounds_model_1628741297.390562.pt", config=config):
+def predict_unknown_sample(file_path, model_path="motor_sounds_model.pt", config=config):
     spectogram, _ = load_and_transform_to_spectogram(file_path, config["resample_freq"], config["n_mels"]) 
     spectogram = spectogram.unsqueeze(0)   
     model = create_model(config)
